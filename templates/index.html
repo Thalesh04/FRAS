@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition App</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: url('static/bg2.jpg'); */
+    /* background-size: cover;
+    background-position: center; */
+    height: 100vh; /* Ensure the background covers the entire viewport */
+}
+
+video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Ensure the video stays behind other content */
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 100px 100px 100px;
+            padding: 20px 20px;
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        form {
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 400px;
+            position: relative;
+        }
+        input[type="file"] {
+            display: none; /* Hide the default file input */
+        }
+        .custom-file-input {
+            background-image: url('static/i.webp'); /* Image for the custom file input button */
+            background-size: cover;
+            padding: 60px; /* Adjust padding as needed */
+            border: 0px;
+            cursor: pointer;
+            position: absolute;
+            margin-left: 210px;
+            top: -380px;
+        }
+
+        /* .custom-file-input input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        } */
+        
+        .custom-file-input:hover {
+            opacity: 0.8; /* Adjust hover effect as needed */
+        }
+        input[type="submit"] {
+            background-color: #773cd6;
+            color: white;
+            padding: 10px 80px 10px;
+            margin-left: 160px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            top: -250px;
+            font-size: large;
+            bottom: -15px;
+            position: relative;
+        }
+        input[type="submit"]:hover {
+            background-color: #210450;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="static/v1.mp4" type="video/mp4">
+        <!-- Your browser does not support HTML5 video. -->
+    </video>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>ＦＡＣＥ_ＲＥＣＯＧＮＩＴＩＯＮ_ＡＰＰ</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <!-- Custom file input button -->
+            <label for="file" class="custom-file-input"></label>
+            <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>
